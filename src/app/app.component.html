@@ -1,4 +1,4 @@
-<app-modal [rowObj]="dataObject" *ngIf="showModal" (hideModal)="showModal = false;"></app-modal>
+<app-modal [rowObj]="dataObject" *ngIf="showModal" (hideModal)="showModal = false;" (click)="clickedOut($event)"></app-modal>
 
 <table class="table">
   <thead>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpGetService } from './httpget.service';
+import {Input} from '@angular/core/src/metadata/directives';
 
 @Component({
   selector: 'app-root',
@@ -31,6 +32,12 @@ export class AppComponent implements OnInit {
     this.httpService.getData().subscribe(response => {
       this.dataRows = response.hits; // set json in dataRows
     });
+  }
+
+  clickedOut(event) {
+    if (event.target.className === 'modals') {
+      this.showModal = false;
+    }
   }
 
   viewRow(index) {
